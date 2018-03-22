@@ -13,11 +13,9 @@ namespace DotnetcoreDiFactory.Infrastructure
         {
             collection.AddScoped<TFactory>();
 
-            TFactory FactoryProvider(IServiceProvider p) => p.GetRequiredService<TFactory>();
-
             Func<IServiceProvider, object> factoryFunc = provider =>
             {
-                var factory = FactoryProvider(provider);
+                var factory = provider.GetRequiredService<TFactory>();
                 return factory.Build();
             };
 
