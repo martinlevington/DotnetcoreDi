@@ -1,0 +1,11 @@
+R:\dev\DotnetcoreDi\DotnetcoreDi\bin\Debug\netcoreapp2.0\DotnetcoreDi.deps.json
+R:\dev\DotnetcoreDi\DotnetcoreDi\bin\Debug\netcoreapp2.0\DotnetcoreDi.runtimeconfig.json
+R:\dev\DotnetcoreDi\DotnetcoreDi\bin\Debug\netcoreapp2.0\DotnetcoreDi.runtimeconfig.dev.json
+R:\dev\DotnetcoreDi\DotnetcoreDi\bin\Debug\netcoreapp2.0\DotnetcoreDi.dll
+R:\dev\DotnetcoreDi\DotnetcoreDi\bin\Debug\netcoreapp2.0\DotnetcoreDi.pdb
+R:\dev\DotnetcoreDi\DotnetcoreDi\obj\Debug\netcoreapp2.0\DotnetcoreDi.csprojResolveAssemblyReference.cache
+R:\dev\DotnetcoreDi\DotnetcoreDi\obj\Debug\netcoreapp2.0\DotnetcoreDi.csproj.CoreCompileInputs.cache
+R:\dev\DotnetcoreDi\DotnetcoreDi\obj\Debug\netcoreapp2.0\DotnetcoreDi.AssemblyInfoInputs.cache
+R:\dev\DotnetcoreDi\DotnetcoreDi\obj\Debug\netcoreapp2.0\DotnetcoreDi.AssemblyInfo.cs
+R:\dev\DotnetcoreDi\DotnetcoreDi\obj\Debug\netcoreapp2.0\DotnetcoreDi.dll
+R:\dev\DotnetcoreDi\DotnetcoreDi\obj\Debug\netcoreapp2.0\DotnetcoreDi.pdb
