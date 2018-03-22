@@ -1,3 +1,6 @@
 .vs/
 DiAutofac/bin/
 DiAutofac/obj/
+DotnetcoreDiFactory/bin/
+DotnetcoreDi/obj/
+DotnetcoreDiFactory/obj/

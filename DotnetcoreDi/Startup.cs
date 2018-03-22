@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.RegistrationAttributes;
+using Autofac.Features.AttributeFilters;
+using DotnetcoreDi.Controllers;
 using DotnetcoreDi.Repositories;
 using DotnetcoreDi.Services;
 using Microsoft.AspNetCore.Builder;
@@ -31,7 +33,7 @@ namespace DotnetcoreDi
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider  ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddControllersAsServices();
 
             // Create the container builder.
             var builder = new ContainerBuilder();
@@ -42,16 +44,19 @@ namespace DotnetcoreDi
             // ServiceCollection can override those things; if you register
             // AFTER Populate those registrations can override things
             // in the ServiceCollection. Mix and match as needed.
+            builder.RegisterModule<AutoRegistrationModule>();
+            builder.RegisterModule<DefaultModule>();
             builder.Populate(services);
             builder.RegisterType<ServiceOne>().As<IServiceOne>();
             builder.RegisterType<RepositoryY1>().Named<IRepositoryX>("firstY");
             builder.RegisterType<RepositoryY2>().Named<IRepositoryX>("secondY");
 
             builder.RegisterType<RepositoryX1>().Keyed<IRepositoryX>("firstX");
-            builder.RegisterType<RepositoryY2>().Keyed<IRepositoryX>("secondX");
+            builder.RegisterType<RepositoryX2>().Keyed<IRepositoryX>("secondX");
 
+            builder.RegisterType<QuestionController>().WithAttributeFiltering();
 
-            this.ApplicationContainer = builder.Build();
+            ApplicationContainer = builder.Build();
 
             // Create the IServiceProvider based on the container.
             return new AutofacServiceProvider(ApplicationContainer);
