@@ -48,8 +48,6 @@ namespace DotnetcoreDi
             builder.RegisterModule<DefaultModule>();
             builder.Populate(services);
             builder.RegisterType<ServiceOne>().As<IServiceOne>();
-            builder.RegisterType<RepositoryY1>().Named<IRepositoryX>("firstY");
-            builder.RegisterType<RepositoryY2>().Named<IRepositoryX>("secondY");
 
             builder.RegisterType<RepositoryX1>().Keyed<IRepositoryX>("firstX");
             builder.RegisterType<RepositoryX2>().Keyed<IRepositoryX>("secondX");

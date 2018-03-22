@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotnetcoreDiFactory.Controllers;
 using DotnetcoreDiFactory.Domain;
 using DotnetcoreDiFactory.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -23,10 +24,16 @@ namespace DotnetcoreDiFactory
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddControllersAsServices();
 
             services.AddTransient<IFruit, Apple>();
             services.AddFactory<Apple, FruitFactory>();
+
+            services.AddTransient<Orange>();
+
+            services.AddTransient<SeefourController>(
+                c => new SeefourController(
+                    c.GetRequiredService<Orange>()));
 
         }
 
